@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="/simplegrid.css">
+  <link rel="stylesheet" href="/icomoon.css">
+  <link rel="stylesheet" href="/feedback/feedback.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/footer.css">
+</head>
+<title>Contact</title>
+<link rel="icon" type="image/x-icon" href="/images/pic/a1.jpg">
+
+<body>
+  <div>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">AB
+      </label>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/certificate/certificate.html">Certificate</a></li>
+        <li><a href="/about/about.html">About</a></li>
+        <li><a class="active" href="/contact/contact.html">Contact</a></li>
+        <li><a href="/feedback/feedback.html">Service</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- <div class="container2">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">DHEKIAJULI, 784110</div>
+          <div class="text-two">ASSAM, INDIA</div>
+        </div> -->
+        <!-- <div class="phone details">
+          <img src="/images/call.png" style="height: 35px;">
+          <div class="topic">Phone</div>
+          <div class="text-one">+91-9957903364</div>
+          <div class="text-two">+91-7896667772</div> 
+        </div> -->
+        <!-- <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">anjanboro811@gmail.com</div> -->
+          <!-- <div class="text-two">anjanboro76@gmail.com</div> -->
+        <!-- </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Feel free to contact me I'd love to get in touch</div>
+        <p>If you have any work from me or any types of quries related to my services,<br>
+          please don't hesitate to contact me. I am here to assist you in any way I can..
+        </p>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="wrap contact" id="contact">
+    <div class="grid grid-pad">
+      <div class="col-1-2">
+        <div class="content address">
+          <h2>Contact</h2>
+          <p> <h5 style="color: rgb(0, 0, 0);"> Feel free to contact me I'd love to get in touch.
+            Are you not finding the answers to your questions here?
+            Are you interested in finding out more about how my skills and experience can help you? to contact me.
+            I am here to assist you in any way I can. </h5></p> <br> 
+          <address>
+            <div>
+              <div class="box-icon">
+                <!-- <i class="icon-location"></i> -->
+              </div>
+              <span>Address:</span>
+              <p>Dibrugarh University, Dibrugarh. </p>
+            </div> <br>
+
+            <div>
+              <div class="box-icon">
+                <!-- <i class="icon-clock"></i> -->
+              </div>
+              <span>Work Time:</span>
+              <p>Monday - Friday from 10am to 5pm</p>
+            </div> <br>
+
+            <div>
+              <div class="box-icon">
+                <!-- <i class="icon-phone"></i> -->
+              </div>
+              <span>Phone:</span>
+              <p>9957903364</p> <br>
+              <span>WhatsApp:</span>
+              <p>7896667772</p>
+            </div>
+          </address>
+        </div>
+      </div>
+      <div id="form">
+        <div class="col-1-2 pleft-25">
+          <div class="container">
+            <h1>
+              <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your name" required>
+                <input type="email" name="Email" placeholder="Your email" required>
+                <input type="text" name="Subject" placeholder="Subject" required>
+                <textarea name="Message" rows="6" placeholder="Message" required></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+              </form>
+              <span id="msg"></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxs3T90kc32BbGIgdXRweHPq0T6DivtP-UlGMGpa-bAgIbeoLYRS4Pcbt1zPJM9Wp7W/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          msg.innerHTML = "Your message has been sent"
+          setTimeout(function () {
+            msg.innerHTML = ""
+          }, 5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+  </script>
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+      <a href="https://www.facebook.com/Anjan.B.112/"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com/anjan_76"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/anjan-boro/"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/anjan.71/"><i class="fa fa-instagram"></i></a>
+      <a href="https://github.com/anjan-71"><i class="fa fa-github"></i></a>
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="/index.html">Home</a>
+
+        <a href="/certificate/certificate.html">Certificate</a>
+
+        <a href="/about/about.html">About</a>
+
+        <a href="/contact/contact.html">Contact</a>
+
+        <a href="/feedback/feedback.html">Services</a>
+        <a href="/resume.pdf" download >Download Resume</a>
+      </p>
+
+      <p>Anjan Boro &copy; 2023</p>
+    </div>
+</body>
+
+</html>
